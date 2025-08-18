@@ -3,8 +3,8 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>ce235d46-115c-497c-b0e2-474afd80f5e9</groupId>
-	<artifactId>ci-cd-demo-prod</artifactId>
-	<version>1.0.4-SNAPSHOT</version>
+	<artifactId>ci-cd-demo-prod-geetika</artifactId>
+	<version>1.0.5-SNAPSHOT</version>
 	<packaging>mule-application</packaging>
 
 	<name>ci-cd-demo-poc-dev</name>
