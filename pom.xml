@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>ce235d46-115c-497c-b0e2-474afd80f5e9</groupId>
-	<artifactId>ci-cd-demo-prod-geetika</artifactId>
+	<artifactId>ci-cd-demo-test-geetika</artifactId>
 	<version>1.0.5-SNAPSHOT</version>
 	<packaging>mule-application</packaging>
 
-	<name>ci-cd-demo-poc-dev</name>
+	<name>ci-cd-demo-poc-test</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -39,7 +39,7 @@
                     <cloudhub2Deployment>
                         <uri>https://anypoint.mulesoft.com</uri>
                         <provider>MC</provider>
-                        <environment>PROD</environment>
+                        <environment>TEST</environment>
                         <target>cc-mule-private-space</target>
                         <releaseChannel>LTS</releaseChannel>
                         <javaVersion>17</javaVersion>
