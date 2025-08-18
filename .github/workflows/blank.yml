@@ -6,14 +6,14 @@ on:
       - main
 
 # Show commit message and branch name in run name
-run-name: "Commit: ${{ github.event.head_commit.message }} | Environment: PROD | maven-github-actions-app"
+run-name: "Commit: ${{ github.event.head_commit.message }} | Environment: TEST | maven-github-actions-app"
 
 jobs:
   Test:
     runs-on: ubuntu-latest
     env:
       JAVA_VERSION: '17'
-      ENVIRONMENT: 'PROD'
+      ENVIRONMENT: 'TEST'
     steps:
     - name: "Checkout Repository ${{ github.repository }}"
       uses: actions/checkout@v4
@@ -55,7 +55,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       JAVA_VERSION: '17'
-      ENVIRONMENT: 'PROD'
+      ENVIRONMENT: 'TEST'
     steps:
     - name: "Checkout Repository ${{ github.repository }}"
       uses: actions/checkout@v4
@@ -125,7 +125,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       JAVA_VERSION: '17'
-      ENVIRONMENT: 'PROD'
+      ENVIRONMENT: 'TEST'
     steps:
     - name: "Checkout Repository ${{ github.repository }}"
       uses: actions/checkout@v4
@@ -148,9 +148,9 @@ jobs:
       with:
         maven-version: 3.9.6
 
-    - name: "Deploy to PROD"
+    - name: "Deploy to TEST"
       env:
         connectedAppId: ${{ secrets.connected_app_id }}
         connectedAppSecret: ${{ secrets.connected_app_secret }}
         grantType: ${{ secrets.grant_type }}
-      run: mvn clean deploy -DskipTests -DmuleDeploy -DClientId="$connectedAppId" -DClientSecret="$connectedAppSecret" -DjavaVersion="${{ env.JAVA_VERSION }}" -DGrantType="$grantType" -Denvironment="PROD" -D"mule.env"="${{ secrets.dev_mule_env }}" -D"application.name"="ci-cd-demo-poc-prod"
+      run: mvn clean deploy -DskipTests -DmuleDeploy -DClientId="$connectedAppId" -DClientSecret="$connectedAppSecret" -DjavaVersion="${{ env.JAVA_VERSION }}" -DGrantType="$grantType" -Denvironment="TEST" -D"mule.env"="${{ secrets.dev_mule_env }}" -D"application.name"="ci-cd-demo-poc-test"
